@@ -7,8 +7,7 @@ What the pipeline does
 SRA reads -> FastQC -> fastp -> HISAT2 -> samtools sort/index
 -> featureCounts -> DESeq2
 
-How to set it up
-bash
+How to set it up:
 conda create -n diffexp -c conda-forge -c bioconda -c defaults \
 sra-tools \
 fastqc \
@@ -23,16 +22,13 @@ conda activate diffexp
 
 Building the HISAT2 index from the full genome needs a lot of RAM (~160GB), so if your machine can't handle that, you can download an already-built index instead:
 
-bash
 wget https://genome-idx.s3.amazonaws.com/hisat/grch38_genome.tar.gz
 
-How to run it
-bash
+How to run it:
 chmod +x differential_expression.sh
 ./differential_expression.sh
 
 I also added two scripts to check the results visually before trusting them (this actually caught a real problem in my data):
 
-bash
 Rscript pca_plot.R normalized_counts.csv DE/
 Rscript diagnostic_plots.R deseq2_results.csv normalized_counts.csv DE/
