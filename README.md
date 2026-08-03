@@ -25,6 +25,7 @@ Building the HISAT2 index from the full genome needs a lot of RAM (~160GB), so i
 
 bash
 wget https://genome-idx.s3.amazonaws.com/hisat/grch38_genome.tar.gz
+
 How to run it
 bash
 chmod +x differential_expression.sh
