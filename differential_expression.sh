@@ -5,8 +5,6 @@ set -e
 mkdir -p Sequences Reference QC Trimmed Alignment Counts DE
 
 # download reads
-# placebo: SRR31630892 (pre), SRR31630893 (post)
-# mifepristone: SRR31630896 (pre), SRR31630897 (post)
 cd Sequences
 
 for SAMPLE in SRR31630892 SRR31630893 SRR31630896 SRR31630897; do
